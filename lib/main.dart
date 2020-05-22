@@ -10,89 +10,56 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$tingg.wav');
   }
 
+  Expanded buildKey({int tone, Color color}) {
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          music(tone);
+        },
+        child: Container(
+          color: color,
+          margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            //mainAxisAlignment: MainAxisAlignment.,
             children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  music(1);
-                },
-                child: Container(
-                  color: Colors.red.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 25, 10, 0),
-                ),
+              buildKey(
+                tone: 1,
+                color: Colors.pink.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(2);
-                },
-                child: Container(
-                  color: Colors.pink.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 2,
+                color: Colors.red.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(3);
-                },
-                child: Container(
-                  color: Colors.deepPurple.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 3,
+                color: Colors.orange.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(4);
-                },
-                child: Container(
-                  color: Colors.blue.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 4,
+                color: Colors.yellow.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(5);
-                },
-                child: Container(
-                  color: Colors.teal.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 5,
+                color: Colors.green.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(6);
-                },
-                child: Container(
-                  color: Colors.yellow.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 6,
+                color: Colors.blue.shade400,
               ),
-              FlatButton(
-                onPressed: () {
-                  music(7);
-                },
-                child: Container(
-                  color: Colors.orange.shade400,
-                  height: 50.0,
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                ),
+              buildKey(
+                tone: 7,
+                color: Colors.indigo.shade400,
               ),
             ],
           ),
